@@ -1,10 +1,9 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Image index{% endblock %}
+{% block title %}{% endblock %}
 
 {% block body %}
-    <h1>Image index</h1>
-
+    {{ render(controller('App\\Controller\\ImageController::new')) }}
     <table class="table">
         <thead>
             <tr>
@@ -22,7 +21,6 @@
                 <td>{{ image.filename }}</td>
                 <td>
                     <a href="{{ path('image_show', {'id': image.id}) }}">show</a>
-                    <a href="{{ path('image_edit', {'id': image.id}) }}">edit</a>
                 </td>
             </tr>
         {% else %}
@@ -32,10 +30,7 @@
         {% endfor %}
         </tbody>
     </table>
-    {# display navigation #}
     <div class="navigation">
         {{ knp_pagination_render(images) }}
     </div>
-
-    <a href="{{ path('image_new') }}">Create new</a>
 {% endblock %}

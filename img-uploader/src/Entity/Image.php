@@ -19,6 +19,8 @@ class Image
 
     /**
      * @ORM\Column(type="string", length=255)
+     *
+     * @var string
      */
     private $title;
 
@@ -36,16 +38,27 @@ class Image
      */
     private $filename;
 
+    /**
+     * @return int|null
+     */
     public function getId(): ?int
     {
         return $this->id;
     }
 
+    /**
+     * @return null|string
+     */
     public function getTitle(): ?string
     {
         return $this->title;
     }
 
+    /**
+     * @param string $title
+     *
+     * @return Image
+     */
     public function setTitle(string $title): self
     {
         $this->title = $title;
@@ -53,11 +66,19 @@ class Image
         return $this;
     }
 
+    /**
+     * @return null|string
+     */
     public function getFilename(): ?string
     {
         return $this->filename;
     }
 
+    /**
+     * @param string $filename
+     *
+     * @return Image
+     */
     public function setFilename(string $filename): self
     {
         $this->filename = $filename;

@@ -18,12 +18,25 @@ class ImageType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('title')
-            ->add('filename', FileType::class, array(
-                'label' => 'Image file (.jpg, .png, .gif)'
+            ->add('title', null, array(
+                'label' => false,
+                'attr'=>array(
+                    'placeholder'=>'image title'
+                )
             ))
+
+            ->add('filename', FileType::class, array(
+                'label' => false,
+                'attr'=>array(
+                    'class'=>'form-control'
+                )
+            ))
+
            ->add('save', SubmitType::class, array(
-                'attr' => array('class' => 'save'),
+               'label' => 'upload image',
+                'attr' => array(
+                    'class' => 'btn btn-primary btn-block'
+                )
             ));
         ;
     }

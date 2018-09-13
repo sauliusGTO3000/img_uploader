@@ -1,9 +1,10 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}{% endblock %}
+{% block title %}Image Uploader{% endblock %}
 
 {% block body %}
-    {{ render(controller('App\\Controller\\ImageController::new')) }}
+    <h1 class="display-4">Image Uploader</h1>
+        {{ render(controller('App\\Controller\\ImageController::new')) }}
     <table class="table">
         <thead>
             <tr>
@@ -31,6 +32,6 @@
         </tbody>
     </table>
     <div class="navigation">
-        {{ knp_pagination_render(images) }}
+        {{ knp_pagination_render(images, '@KnpPaginator/Pagination/twitter_bootstrap_v4_pagination.html.twig') }}
     </div>
 {% endblock %}

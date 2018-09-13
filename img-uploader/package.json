@@ -16,6 +16,6 @@
         "build": "encore production"
     },
     "dependencies": {
-        "bootstrap-sass": "^3.3.7"
+        "bootstrap": "^4.1.3"
     }
 }

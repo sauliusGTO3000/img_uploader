@@ -5,10 +5,12 @@ namespace App\Controller;
 use App\Entity\Image;
 use App\Form\ImageType;
 use App\Repository\ImageRepository;
+use App\Service\FileUploader;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+
 
 /**
  * @Route("/image")
@@ -26,13 +28,17 @@ class ImageController extends Controller
     /**
      * @Route("/new", name="image_new", methods="GET|POST")
      */
-    public function new(Request $request): Response
+    public function new(Request $request, FileUploader $fileUploader): Response
     {
         $image = new Image();
         $form = $this->createForm(ImageType::class, $image);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            $file = $form->get('filename')->getData();
+            $fileName = $fileUploader->upload($file);
+            $image->setFilename($fileName);
+
             $em = $this->getDoctrine()->getManager();
             $em->persist($image);
             $em->flush();

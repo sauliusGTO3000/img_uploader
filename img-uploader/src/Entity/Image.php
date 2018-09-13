@@ -24,9 +24,13 @@ class Image
 
     /**
      * @ORM\Column(type="string", length=255)
-     * @Assert\File(
+     * @Assert\Image(
      *     maxSize = "20M",
      *     mimeTypes = {"image/jpeg", "image/png", "image/gif"},
+     *     maxHeight = "2000",
+     *     maxWidth = "2000",
+     *     minHeight="100",
+     *     minWidth = "100",
      *     mimeTypesMessage = "Please upload a valid image, allowed types: .jpg, .png, .gif"
      *     )
      */

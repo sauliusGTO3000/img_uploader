@@ -5,33 +5,25 @@
 {% block body %}
     <h1 class="display-4">Image Uploader</h1>
         {{ render(controller('App\\Controller\\ImageController::new')) }}
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Title</th>
-                <th>Filename</th>
-                <th>actions</th>
-            </tr>
-        </thead>
-        <tbody>
+    <div class="row">
         {% for image in images %}
-            <tr>
-                <td>{{ image.id }}</td>
-                <td>{{ image.title }}</td>
-                <td>{{ image.filename }}</td>
-                <td>
-                    <a href="{{ path('image_show', {'id': image.id}) }}">show</a>
-                </td>
-            </tr>
+            <div class="col-sm-6 col-lg-4" style="margin-bottom: 1.25rem;">
+                <div class="card">
+                    <img class="card-img-top" src="../uploads/images/{{ image.filename }}" alt="{{ image.title }}">
+
+                <div class="card-body">
+                    <h4 class="card-title">
+                        {{ image.title }}
+                    </h4>
+                    <a href="{{ path('image_show', {'id': image.id}) }}" class="btn btn-primary">View Image</a>
+                </div>
+            </div>
+            </div>
         {% else %}
-            <tr>
-                <td colspan="4">no records found</td>
-            </tr>
+            <h2>no images found</h2>
         {% endfor %}
-        </tbody>
-    </table>
-    <div class="navigation">
+    </div>
+     <div class="navigation">
         {{ knp_pagination_render(images, '@KnpPaginator/Pagination/twitter_bootstrap_v4_pagination.html.twig') }}
     </div>
 {% endblock %}

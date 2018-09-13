@@ -36,7 +36,7 @@ class ImageController extends Controller
         $result = $paginator->paginate(
             $images,
             $request->query->getInt('page',1),
-            $request->query->getInt('limir',8)
+            $request->query->getInt('limir',9)
         );
         return $this->render('image/index.html.twig', [
             'images' => $result,

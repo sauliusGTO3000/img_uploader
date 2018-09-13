@@ -6,6 +6,7 @@ use App\Entity\Image;
 use App\Form\ImageType;
 use App\Repository\ImageRepository;
 use App\Service\FileUploader;
+use Knp\Component\Pager\Paginator;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -20,9 +21,20 @@ class ImageController extends Controller
     /**
      * @Route("/", name="image_index", methods="GET")
      */
-    public function index(ImageRepository $imageRepository): Response
+    public function index(ImageRepository $imageRepository, Request $request): Response
     {
-        return $this->render('image/index.html.twig', ['images' => $imageRepository->findAll()]);
+        $images = $imageRepository->findAll();
+        /**
+         * @var $paginator \Knp\Component\Pager\Paginator
+         */
+        $paginator = $this->get('knp_paginator');
+        $result = $paginator->paginate(
+            $images,
+            $request->query->getInt('page',1),
+            $request->query->getInt('limir',8)
+        );
+
+        return $this->render('image/index.html.twig', ['images' => $result]);
     }
 
     /**

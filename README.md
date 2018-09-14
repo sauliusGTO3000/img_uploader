@@ -11,6 +11,11 @@ instructions to run the project:
     ```
     composer install
     ```
+    
+    ```
+    php bin/console doctrine:database:create
+    ```
+    
     ```
     yarn install
     ```

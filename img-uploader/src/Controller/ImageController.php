@@ -28,7 +28,7 @@ class ImageController extends Controller
      */
     public function index(ImageRepository $imageRepository, Request $request): Response
     {
-        $images = $imageRepository->findAll();
+        $images = $imageRepository->findByIdDesc();
         /**
          * @var $paginator \Knp\Component\Pager\Paginator
          */

@@ -8,6 +8,7 @@ instructions to run the project:
      ```
      
   2. inside project directory, run the following:
+  
     ```
     composer install
     ```
@@ -19,6 +20,8 @@ instructions to run the project:
     ```
     yarn install
     ```
+    ```
+    yarn encore dev
     ```
     php bin/console server:run
     ```

@@ -27,3 +27,5 @@ instructions to run the project:
       ```
       php bin/console server:run
       ```
+  3. Navigate to provided localhost address.
+  

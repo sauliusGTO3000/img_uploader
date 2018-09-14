@@ -1,4 +1,9 @@
-# img_uploader
+# Image Uploader
+
+A simple web page for image uploading.
+Project was created using:
+  - Symfony with Flex
+  - Yarn
 
 instructions to run the project:
   1. clone the project

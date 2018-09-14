@@ -16,6 +16,9 @@ instructions to run the project:
       php bin/console doctrine:database:create
       ```
       ```
+      php bin/console doctrine:schema:create
+      ```
+      ```
       yarn install
       ```
       ```
@@ -24,9 +27,3 @@ instructions to run the project:
       ```
       php bin/console server:run
       ```
-    
-  2. navigate to the img-uploader file
-  3. run "composer install"
-  4. run "php bin/console doctrine:database:create"
-  5. run "php bin/console doctrine:schema:create"
-  6. run "yarn install"

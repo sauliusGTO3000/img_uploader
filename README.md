@@ -8,9 +8,11 @@ instructions to run the project:
      ```
      
   2. inside project directory, run the following:
+  
     ```
     composer install
     ```
+    
     ```
     php bin/console doctrine:database:create
     ```

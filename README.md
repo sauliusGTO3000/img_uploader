@@ -40,5 +40,5 @@ A simple web page for image uploading. Project is temporarily deployed on https:
       ```
       php bin/console server:run
       ```
-  3. Navigate to provided localhost address in your browser.
+  3. Navigate to provided address in your browser, e.g. http://127.0.0.1:8000
   

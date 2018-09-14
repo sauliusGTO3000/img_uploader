@@ -26,7 +26,7 @@ A simple web page for image uploading. Project is temporarily deployed on https:
       composer install
       ```
       ```
-      php bin/console doctrine:database:create
+      bin/console doctrine:database:create
       ```
       ```
       bin/console doctrine:schema:create

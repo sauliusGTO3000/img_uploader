@@ -29,6 +29,7 @@ class ImageController extends Controller
     public function index(ImageRepository $imageRepository, Request $request): Response
     {
         $images = $imageRepository->findByIdDesc();
+
         /**
          * @var $paginator \Knp\Component\Pager\Paginator
          */
@@ -58,6 +59,11 @@ class ImageController extends Controller
             'method' => 'POST'
         ]);
         $form->handleRequest($request);
+
+        if ($form->isSubmitted() && !$form->isValid()) {
+            $this->addFlash("error", "You are trying to upload invalid image");
+            return $this->redirectToRoute('image_index');
+        }
 
         if ($form->isSubmitted() && $form->isValid()) {
             $file = $form->get('filename')->getData();

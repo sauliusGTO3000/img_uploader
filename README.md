@@ -40,5 +40,5 @@ A simple web page for image uploading.
       ```
       php bin/console server:run
       ```
-  3. Navigate to provided localhost address.
+  3. Navigate to provided localhost address in your browser.
   

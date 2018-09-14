@@ -26,10 +26,10 @@ A simple web page for image uploading. Project is temporarily deployed on https:
       composer install
       ```
       ```
-      bin/console doctrine:database:create
+      php bin/console doctrine:database:create
       ```
       ```
-      bin/console doctrine:schema:create
+      php bin/console doctrine:schema:create
       ```
       ```
       yarn install
@@ -38,7 +38,7 @@ A simple web page for image uploading. Project is temporarily deployed on https:
       yarn encore dev
       ```
       ```
-      bin/console server:run
+      php bin/console server:run
       ```
   3. Navigate to provided localhost address in your browser.
   

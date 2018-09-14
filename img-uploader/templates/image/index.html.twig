@@ -9,7 +9,7 @@
         {% for image in images %}
             <div class="col-sm-6 col-lg-4" style="margin-bottom: 1.25rem;">
                 <div class="card">
-                    <img class="card-img-top" src="../uploads/images/{{ image.filename }}" alt="{{ image.title }}">
+                    <img class="card-img-top" src="{{ asset('uploads/images/')  }}{{ image.filename }}" alt="{{ image.title }}">
 
                 <div class="card-body">
                     <h4 class="card-title">

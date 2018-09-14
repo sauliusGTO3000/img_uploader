@@ -2,8 +2,15 @@
 
 A simple web page for image uploading.
 Project was created using:
-  - Symfony with Flex
-  - Yarn
+  - Symfony 3.4.15 with Flex
+  - SQLite
+  - Bootstrap 4.1.3
+  - Twig
+  - Sass
+  - Composer
+  - Webpack
+  - Encore
+  - knp-paginator-bundle
 
 instructions to run the project:
   1. clone the project

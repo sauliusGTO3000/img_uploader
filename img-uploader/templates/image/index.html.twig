@@ -22,6 +22,6 @@
         {% endfor %}
     </div>
      <div class="navigation">
-        {{ knp_pagination_render(images, '@KnpPaginator/Pagination/twitter_bootstrap_v4_pagination.html.twig') }}
+        {{ knp_pagination_render(images, '@KnpPaginator/Pagination/twitter_bootstrap_v4_pagination.html.twig'|raw) }}
     </div>
 {% endblock %}

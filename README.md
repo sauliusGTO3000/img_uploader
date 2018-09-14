@@ -1,6 +1,6 @@
 # Image Uploader
 
-A simple web page for image uploading.
+A simple web page for image uploading. Project is temporarily deployed on https://www.sauliusgto3000.lt until 9/19/2018
 
 ***Project was created using:***
   - Symfony 3.4.15 with Flex

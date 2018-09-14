@@ -1,7 +1,7 @@
 # Image Uploader
 
 A simple web page for image uploading.
-##Project was created using:
+###Project was created using:
   - Symfony 3.4.15 with Flex
   - SQLite
   - Bootstrap 4.1.3
@@ -12,7 +12,7 @@ A simple web page for image uploading.
   - Encore
   - knp-paginator-bundle
 
-##instructions to run the project:
+###instructions to run the project:
   1. clone the project
   
      ```

@@ -29,6 +29,10 @@ class Image
      * @Assert\Image(
      *     maxSize = "20M",
      *     mimeTypes = {"image/jpeg", "image/png", "image/gif"},
+     *     maxHeight = "10000",
+     *     maxWidth = "10000",
+     *     minHeight="100",
+     *     minWidth = "100",
      *     mimeTypesMessage = "Please upload a valid image, allowed types: .jpg, .png, .gif"
      *     )
      */
